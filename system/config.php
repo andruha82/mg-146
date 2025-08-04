@@ -2,9 +2,9 @@
 
 // MySQL
 $host = 'localhost';
-$db   = 'mguide_main';
-$user = 'mguide_usr';
-$pass = 'Fh47rcs4cfg';
+$db   = 'database';
+$user = 'user';
+$pass = 'password';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -22,8 +22,9 @@ try {
 }
 
 // Telegram
-$botToken = '7763376179:AAHqT84I2CXfhQgu75uCZoFW0ZvosMhIJvg';
-define('BOT_TOKEN', '7763376179:AAHqT84I2CXfhQgu75uCZoFW0ZvosMhIJvg');
+$botToken = 'BOT-TOKEN';
+define('BOT_TOKEN', 'BOT-TOKEN');
 define('API_URL', 'https://api.telegram.org/bot' . BOT_TOKEN . '/');
 define('DEFAULT_LANG', 'uk'); // язык по умолчанию
 ?>
+
