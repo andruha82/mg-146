@@ -1,7 +1,7 @@
 <?php
 // 🧠 OpenAI (провайдер по умолчанию)
 define('AI_PROVIDER', 'openai');                     // Провайдер по умолчанию
-define('API_KEY', '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');    // API-ключ от OpenAI
+define('API_KEY', 'sk-proj');    // API-ключ от OpenAI
 define('AI_MODEL', 'gpt-4.1-nano');                        // Модель по умолчанию
 
 // 💸 Groq (эконом-вариант, дешёвые ответы)
