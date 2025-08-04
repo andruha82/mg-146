@@ -1,9 +1,9 @@
 <?php
 // db.php
 $host = 'localhost';
-$db   = 'mguide_main';
-$user = 'mguide_usr';
-$pass = 'Fh47rcs4cfg';
+$db   = 'base';
+$user = 'user';
+$pass = 'password';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -20,3 +20,4 @@ try {
      throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 ?>
+
