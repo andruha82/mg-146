@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1b1464;
+    padding: 10px;
+    z-index: 9999;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    font-family: 'Lilita One', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-left: 7px; /* Добавляем отступ слева от логотипа */
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.nav-links li a.button-style {
+
+    color: #fff;
+    padding: 5px 16px;
+    border-radius: 4px;
+    border: none;
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+
+.gray {
+    /* background-color: #333333; */
+    background-color: #1579c2;
+}
+
+.green {
+    background-color: #ff6100;
+    /* background-color: #4CAF50; */
+}
+
+.pastelgold {
+    background-color: #FCC662;
+}
+
+
+
+
+.disabled-link {
+    cursor: pointer; /* Курсор-крестик */
+}
+
+.nav-links li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /* background-color: #252d5b; */
+    background-color: #040c37;
+    list-style: none;
+    padding: 0;
+    border-radius: 5px;
+    z-index: 9999;
+
+    white-space: nowrap; /* Запрещаем перенос слов */
+    overflow: hidden; /* Скрываем текст, который выходит за пределы */
+    text-overflow: ellipsis; /* Добавляем многоточие, если текст не помещается */
+}
+
+.nav-links li:hover .dropdown {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+
+.nav-links li .dropdown li a:hover {
+    background-color: #1579c2;
+    color: #fff; /* Чтобы текст оставался читаемым */
+}
+
+
+.nav-links li.active .dropdown {
+    display: block;
+}
+
+.nav-links .button-container {
+    display: flex;
+    justify-content: center; /* Выравнивание по центру по горизонтали */
+    align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.language {
+    margin-left: auto;
+}
+
+.language > a::after, .cases > a::after {
+  content: " ▼"; /* Добавляем стрелку */
+  font-size: 0.8em; /* Уменьшаем размер стрелки */
+  margin-left: 5px; /* Отступ между текстом и стрелкой */
+}
+
+.language.active > a::after, .cases.active > a::after {
+  content: " ▲";
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    width: 25px;
+    height: 25px;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px; /* Толщина линий */
+    background-color: #fff;
+    margin: 3px 0; /* Расстояние между полосками */
+    transition: 0.4s;
+}
+
+.menu-icon.change .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px); /* Ваши рабочие значения */
+}
+
+.menu-icon.change .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.change .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px); /* Ваши рабочие значения */
+}
+
+.mobile-stripes {
+    display: none;
+}
+
+
+@media (min-width: 1025px) {
+    max-width: 360px; /* Ограничиваем ширину выпадающего меню */
+}
+
+@media (max-width: 1024px) {
+
+    .navbar {
+       padding-right: 15px;
+       z-index: 9999;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #0a1551;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 9999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li .dropdown {
+        position: static;
+        width: 100%;
+        z-index: 9999;
+    }
+
+    .nav-links li .dropdown li a {
+        font-size: 14px;
+        color: #fff; /* Чтобы текст оставался читаемым */
+    }
+
+    .language {
+        margin-left: 0;
+    }
+
+    .nav-links .button-container {
+        margin: 10px 0 10px 0;
+    }
+    .mobile-stripes {
+        display: block;
+        margin-top: 5px;
+    }
+
+    .mobile-stripes .stripe {
+        height: 2px;
+        width: 100%;
+    }
+
+    .mobile-stripes .white {
+        background-color: white;
+    }
+
+    .mobile-stripes .blue {
+        background-color: #1b1464;    }
+
+}

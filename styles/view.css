@@ -1,0 +1,65 @@
+ .section h2 {
+    font-family: Mulish, sans-serif;
+    font-size: 22px;
+    color: #333;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 20px 20px 0px 20px;
+    text-align: center;
+ }
+
+ .content {
+    font-family: Mulish, sans-serif;
+    font-size: 17px;
+    color: #333;
+    line-height: 1.5;
+    max-width: 1024px;
+    text-align: justify;
+    margin: 0 auto;
+    padding: 20px;
+ }
+
+ .plyr__video-embed, video {
+    width: 100%;
+    max-width: 1024px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+ }
+
+ .section p {
+    padding-bottom: 15px;
+    text-indent: 20px;
+ }
+
+/* Информационная строка с использованием CSS Grid */
+ .info-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 20px;
+ }
+
+ .date-block {
+    text-align: left;
+ }
+
+        .article-actions {
+            text-align: center;
+        }
+
+        .reading-time-block {
+            text-align: right;
+        }
+
+
+@media (max-width: 480px) {
+ .info-row {
+    padding: 10px 20px;
+ }
+}

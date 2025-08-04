@@ -1,0 +1,528 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Главный блок, общие стили */
+
+.block-main {
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  max-width: 1280px;
+  overflow: hidden;
+}
+
+.block-main .text-section, .block-main .image-section {
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.block-main .text-section h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.block-main .text-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+/* Кнопка */
+.block-main .cta-button-main {
+  align-self: flex-end;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #43b02a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.block-main .cta-button-main:hover {
+  background-color: #ff090b;
+}
+
+/* Изображение в правом блоке */
+.image-section {
+  background-size: 70%;
+  background-image: url('../images/main.jpg');
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20px) center;
+}
+
+/* Главный блок,  для мобильных и планшетов */
+@media (max-width: 1024px) {
+  .block-main {
+    flex-direction: column;
+    aspect-ratio: auto;
+    position: relative;
+  }
+
+  .block-main .image-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.07;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+  }
+
+  .block-main .text-section {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    color: #000;
+    text-align: center;
+  }
+
+  .block-main .text-section p {
+    font-size: 21px;
+    line-height: 1.3;
+    margin-bottom: 30px;
+    text-align: justify;
+  }
+
+  .block-main .cta-button-main {
+    align-self: center;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .block-main .text-section p {
+    font-size: 17px;
+    line-height: 1.3;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .block-main {
+    flex-direction: column;
+  }
+
+  .block-main .image-section {
+    order: -1; /* ставим картинку первой */
+    position: static;
+    width: 100%;
+    aspect-ratio: 7 / 4;
+    opacity: 1;
+    background-position: center;
+    margin-bottom: 10px;
+    padding: 0;
+    background-size: 90%;
+    background-repeat: no-repeat;
+  }
+
+  .block-main .text-section {
+    order: 0;
+    position: static;
+    z-index: auto;
+    color: #000;
+    text-align: center;
+    padding: 20px;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .block-main .text-section p {
+    font-size: 15px;
+    line-height: 1.3;
+    margin-bottom: 30px;
+  }
+}
+
+/* === Секция преимущества, общие стили === */
+.benefits-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  padding: 0px;
+  background: #fff;
+  text-align: center;
+}
+
+.benefits-section h2 {
+  font-size: 28px;
+  margin: 20px 0;
+}
+
+.features-wrapper {
+  position: relative;
+}
+
+.arrow {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  display: none;       /* будут видны только на <768px */
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow.prev { left: 8px; }
+.arrow.next { right: 8px; }
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-width: 0;
+  background: #fdf8c0;
+  padding: 20px;
+  border-radius: 8px;
+  bbox-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.feature .icon svg {
+  width: 48px;
+  height: 48px;
+  color: #008f5a;
+}
+
+.feature h3{
+  font-size: 23px;
+  margin: 10px 0;
+  color: #6d398b;
+}
+
+.feature p{
+  font-size: 14px;
+}
+
+/* === Мобильная карусель: до 480px – 1 слайд === */
+@media (max-width: 480px) {
+
+  .benefits-section {
+    margin: 30px 0;
+  }
+
+  .features {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-inline: 10px;
+    gap: 0;
+    padding: 0;
+  }
+    
+  .features::-webkit-scrollbar {
+    display: none;
+  }
+
+  .features > .feature {
+    flex: 0 0 100%;
+    margin: 0;
+    scroll-snap-align: center;
+  }
+
+}
+
+/* === Планшет: 481–1024px – 2 слайда === */
+@media (min-width: 481px) and (max-width: 1024px) {
+
+  .benefits-section {
+    max-width: 760px;
+  }
+
+  .features {
+    max-width: 760px;
+    margin: 0 auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-inline: 10px;
+    gap: 0;
+    padding: 0;
+  }
+
+  .features::-webkit-scrollbar {
+    display: none;
+  }
+      
+  .features > .feature {
+    flex: 0 0 calc(50% - 20px);
+    margin: 0 10px;
+    scroll-snap-align: start;
+  }
+}
+
+/* === Десктоп ≥1025px – 4 в ряд === */
+@media (min-width: 1025px) {
+  .features {
+    overflow: visible;
+    scroll-snap-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    padding: 0;
+  }
+  .features > .feature {
+    flex: 1 1 0;
+    margin: 0;
+    scroll-snap-align: none;
+  }
+}
+
+/* === Показываем стрелки на планшете/мобиле === */
+@media (max-width: 1025px) {
+  .arrow {
+    display: flex;
+  }
+}
+
+
+/* === Блок "Чем полезен наш сервис" + "Отзывы о нас", общие стили === */
+
+
+.block-why {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.block-why h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.left, .right {
+    max-width: 640px;
+    flex: 1;
+    box-sizing: border-box;
+    padding: 0;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.left span, .right span{
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+ .left img, .right img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+ .even .left, .odd .right {
+    padding: 10px 50px;
+    box-sizing: border-box;
+}
+
+/* Кнопка */
+.block .cta-button {
+  margin: 20px auto;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #4e60ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.block .cta-button:hover {
+  background-color: #3c49d3;
+}
+
+
+.reviews-section {
+  max-width: 1280px;
+  margin: 0px auto;
+  margin-top: 50px;
+  padding: 0px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  text-align: center;
+}
+
+.reviews-section h2 {
+  font-size: 28px;
+  margin: 20px 0;
+}
+
+.swiper {
+  padding-bottom: 30px;
+}
+        
+.swiper-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+        
+.swiper-slide {
+  text-align: center;
+  background: #fdf8c0;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%; /* Убрали фиксированную ширину */
+  min-height: 250px;
+  box-sizing: border-box; /* Учитываем padding в ширине */
+}
+        
+.swiper-button-prev, .swiper-button-next {
+  color: #333;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* === Блок "Чем полезен наш сервис" + "Отзывы о нас", mobile + desktop === */
+
+@media (max-width: 1280px) {
+
+  .block {
+    flex-direction: column;
+    font-size: 16px;
+    align-items: center;
+  }
+
+
+
+  .even .right {
+    order: -1;
+  }
+
+  .even .left, .odd .right {
+    padding: 10px 0 0 0;
+    box-sizing: border-box;
+    text-align: justify;
+    font-size: 20px;
+  }
+
+  .even .left span, .odd .right span {
+    font-size: 25px;
+  }
+
+  .block .cta-button {
+    display: block;
+    margin: 20px auto;
+    font-size: 24px;
+  }
+
+  .left, .right, .reviews-section {
+    max-width: 740px;
+  }
+
+  .swiper-slide {
+    min-height: 280px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+
+  .reviews-section{
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .block-why h2, .benefits-section h2{
+    font-size: 24px;
+  }
+
+  .block {
+    flex-direction: column;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  .odd .right, .even .left {
+    padding: 5px 0 0 0;
+    font-size: 17px;
+  }
+
+  .even .left span, .odd .right span {
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .block .cta-button {
+    font-size: 17px;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .block-why h2, .benefits-section h2, .reviews-section h2{
+    font-size: 22px;
+  }
+
+  .even .left, .odd .right {
+    font-size: 16px;
+  }
+
+  .even .left span, .odd .right span {
+    font-size: 16px;
+  }
+
+  .block .cta-button {
+    font-size: 15px;
+  }
+
+}

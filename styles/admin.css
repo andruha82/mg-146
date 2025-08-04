@@ -1,0 +1,71 @@
+        .section {
+            padding: 10px 20px 20px 20px;
+            background: #f3ffef;
+            color: #888888;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+        }
+        .section h1 {
+            text-align: center;
+            font-size: 22px;
+        }
+        .section form {
+            width: 100%;
+        }
+        .section label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        .section input, textarea, select {
+            font-family: Mulish, sans-serif;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+        .section textarea {
+            height: 200px;
+            resize: vertical;
+        }
+        .section .button {
+            font-family: Mulish, sans-serif;
+            display: inline-block;
+            width: 100%;
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .section .button:hover {
+            background: #0056b3;
+        }
+        .section .message {
+            text-align: center;
+            font-size: 18px;
+            color: green;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .preview-link {
+            display: inline-block;
+            margin-top: 5px;
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 14px;
+        }
+        .preview-link:hover {
+            color: #0056b3;
+        }

@@ -1,0 +1,430 @@
+        /* Global Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fff;
+            bbackground-color: #f3f4f6;
+            font-family: Montserrat, sans-serif;
+            margin: 0px;
+        }
+
+        /* Container Styles */
+        .section {
+            display: flex;
+            flex-direction: column;
+            max-width: 1480px;
+            margin: 0 auto;
+            padding: 10px 15px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        /* Typography Styles */
+        h1.title {
+            margin: 0;
+        }
+
+        .title {
+            order: 4;
+        }
+
+        .subtitle {
+            padding: 0 10px;
+            order: 5;
+            display: block;
+            font-size: 15px;
+            font-weight: 500;
+            color: #333333;
+            line-height: 1.5;
+            margin: 20px 0;
+        }
+
+        .or {
+            display: none;
+            order: 6;
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: 600;
+            padding-top: 10px;
+            color: #444;
+        }
+
+        .price-day {
+            font-size: 17px;
+            font-weight: 600;
+            padding-top: 5px;
+            color: #444;
+        }
+
+        .price-day strong {
+            font-size: 26px;
+            font-weight: 700;
+            color: red;
+        }
+
+        .price-month {
+            font-size: 18px;
+            font-weight: 600;
+            padding-top: 5px;
+            color: #444;
+        }
+
+        .price-year {
+            font-size: 15px;
+            font-weight: 600;
+            padding-top: 5px;
+            color: #444;
+        }
+
+        .price strong {
+            font-size: 28px;
+            font-weight: 700;
+            padding-top: 10px;
+            color: red;
+        }
+
+        /* Plan Container Styles */
+        .plan-container {
+            order: 7;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 20px;
+            padding-top: 20px;
+        }
+
+        /* Card Styles */
+        .shadow-radius {
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        .plan {
+            background-color: #f3f4f6;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 340px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .plan-header {
+            bbackground-color: #f3f4f6;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            border-radius: 10px;
+            font-size: 13px;
+            padding: 0px 0 20px 0;
+        }
+
+        .plan-header img {
+            width: 40%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .plan ul {
+            text-align: left;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .plan ul li {
+            margin: 5px 0;
+        }
+
+        /* Highlight Styles */
+        .highlight {
+            bbackground-color: #3b82f6;  
+            background-color: red;  
+            display: block;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .highlight span {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: yellow;
+            margin: 8px 0;
+        }
+
+        /* Button Styles */
+        .button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #43b02a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: #2563eb;
+            transform: scale(1.03);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        .button.secondary {
+            background-color: #4c9bf8;
+            color: #fff;
+            font-weight: 400;
+        }
+
+        .button.secondary:hover {
+            background-color: #bbb;
+        }
+
+        /* Free Trial Styles */
+        .free-trial-container {
+            order: 8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 20px;
+            border-radius: 12px;
+            background-color: #F9F9FF;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        .free-trial-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .free-trial-text h3 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            margin-top: 0px;
+        }
+
+        .free-trial-text p {
+            font-size: 16px;
+            color: #5a6a7d;
+            margin: 0;
+        }
+
+        .free-trial-button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .free-trial-button:hover {
+            background-color: #3a7bc8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Promo Block Styles */
+        .promo-block {
+            order: 9;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        .promo-block h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .promo-block p {
+            font-size: 16px;
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+
+        .promo-block ul {
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 20px;
+            list-style: none;
+        }
+
+        .promo-block ul li {
+            margin: 10px 0;
+            font-size: 15px;
+        }
+
+        .promo-block .button {
+            width: auto;
+            padding: 12px 30px;
+            margin: 10px auto;
+        }
+
+        /* Footnotes Styles */
+        .footnotes {
+            order: 10;
+            margin-top: 0px;
+            text-align: left;
+            font-size: 12px;
+            color: #4b5563;
+            max-width: 1044px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footnotes p{
+            margin-bottom: 5px;
+        }
+
+        /* Default full width */
+        .free-trial-container,
+        .promo-block {
+            width: 100%;
+            max-width: 1060px;
+            margin: 20px auto;
+            padding: 25px 20px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 480px) {
+            .plan {
+                max-width: 480px;
+            }
+
+            .plan-container {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .free-trial-container {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+                order: 2;
+            }
+
+            .or {
+                order: 3;
+                display: flex;
+                margin: 20px auto;
+                font-size: 20px;
+                font-weight: 700;
+                color: red;
+            }
+
+            .free-trial-text {
+                padding-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .free-trial-button {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            /* Mobile styles */
+            .free-trial-container,
+            .promo-block {
+                max-width: none;
+                width: 100%;
+                padding: 20px;
+            }
+        }
+
+        /* Переключатель */
+        .pricing-toggle {
+            order: 6;
+            align-self: center;
+            width: 320px;
+            position: relative;
+            display: inline-flex;
+            background: #858585;
+            border-radius: 9999px;
+            user-select: none;
+            ffont-family: sans-serif;
+        }
+
+        /* Скрываем радио */
+        .pricing-toggle input { 
+            position: absolute; 
+            opacity: 0; 
+        }
+
+        /* Лейблы фиксированной ширины */
+        .pricing-toggle label {
+            flex: none;
+            width: 160px;
+            text-align: center;
+            padding: 8px 16px;
+            cursor: pointer;
+            z-index: 1;
+            color: #fff;
+            transition: color 0.3s;
+            white-space: nowrap;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        #toggle-monthly:checked ~ label[for="toggle-monthly"],
+        #toggle-annual:checked ~ label[for="toggle-annual"] {
+            color: #000;
+        }
+
+        /* Слайдер теперь позиционируем строгим left/right */
+        .pricing-toggle .slider {
+            position: absolute;
+            top: 3px; 
+            bottom: 3px;
+            left: 3px;
+            width: calc(50% - 6px);
+            background: #fff;
+            border-radius: 9999px;
+            transition: left 0.3s;
+        }
+
+        #toggle-annual:checked ~ .slider {
+            left: calc(50% + 3px);
+        }
+
+        .badge {
+            margin-left: 4px;
+            padding: 2px 4px;
+            font-size: 0.7rem;
+            background: #facc15;
+            color: #92400e;
+            border-radius: 9999px;
+            vertical-align: middle;
+        }
